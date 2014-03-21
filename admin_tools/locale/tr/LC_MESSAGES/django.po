@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-31 01:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: widgets.py:47
+msgid "Date:"
+msgstr ""
+
+#: widgets.py:48
+msgid "Time:"
+msgstr ""
+
+#: dashboard/dashboards.py:81 menu/menus.py:100
+msgid "Dashboard"
+msgstr ""
+
+#: dashboard/dashboards.py:225
+msgid "Quick links"
+msgstr ""
+
+#: dashboard/dashboards.py:231
+msgid "Return to site"
+msgstr ""
+
+#: dashboard/dashboards.py:232 theming/templates/admin/base.html:48
+msgid "Change password"
+msgstr ""
+
+#: dashboard/dashboards.py:234 theming/templates/admin/base.html:55
+msgid "Log out"
+msgstr ""
+
+#: dashboard/dashboards.py:240 dashboard/modules.py:422 menu/menus.py:102
+msgid "Applications"
+msgstr ""
+
+#: dashboard/dashboards.py:246 menu/menus.py:106
+#: menu/templates/admin/base_site.html:16
+#: menu/templates/admin_tools/menu/menu.html:41
+msgid "Administration"
+msgstr ""
+
+#: dashboard/dashboards.py:251 dashboard/dashboards.py:305
+#: dashboard/modules.py:588
+msgid "Recent Actions"
+msgstr ""
+
+#: dashboard/dashboards.py:255
+msgid "Latest Django News"
+msgstr ""
+
+#: dashboard/dashboards.py:262
+msgid "Support"
+msgstr ""
+
+#: dashboard/dashboards.py:265
+msgid "Django documentation"
+msgstr ""
+
+#: dashboard/dashboards.py:270
+msgid "Django \"django-users\" mailing list"
+msgstr ""
+
+#: dashboard/dashboards.py:275
+msgid "Django irc channel"
+msgstr ""
+
+#: dashboard/modules.py:341
+msgid "Links"
+msgstr ""
+
+#: dashboard/modules.py:641
+msgid "No recent actions."
+msgstr ""
+
+#: dashboard/modules.py:687
+msgid "RSS Feed"
+msgstr ""
+
+#: dashboard/templates/admin/app_index.html:9
+#: theming/templates/admin/base.html:32
+msgid "Home"
+msgstr ""
+
+#: dashboard/templates/admin/app_index.html:11
+#, python-format
+msgid "%(name)s"
+msgstr ""
+
+#: dashboard/templates/admin_tools/dashboard/dashboard.html:70
+msgid "Modules"
+msgstr ""
+
+#: dashboard/templates/admin_tools/dashboard/modules/app_list.html:14
+#: dashboard/templates/admin_tools/dashboard/modules/model_list.html:12
+msgid "Add"
+msgstr ""
+
+#: dashboard/templates/admin_tools/dashboard/modules/app_list.html:16
+#: dashboard/templates/admin_tools/dashboard/modules/model_list.html:14
+msgid "Change"
+msgstr ""
+
+#: menu/templates/admin/base_site.html:4
+msgid "Site admin"
+msgstr ""
+
+#: theming/templates/admin/base.html:35
+msgid "Welcome,"
+msgstr ""
+
+#: theming/templates/admin/base.html:40
+msgid "Documentation"
+msgstr ""

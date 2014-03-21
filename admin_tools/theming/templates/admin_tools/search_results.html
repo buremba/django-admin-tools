@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}
+    <h1>{% trans 'Search Results' %}</h1>
+{% endblock %}
+
+{% block content %}
+
+    {% if error %}
+        <h5>{{ error }}</h5>
+    {% else %}
+    <h5>
+    {% blocktrans %}
+    {{ sum }} Items found.
+    {% endblocktrans %}
+    </h5><br>
+    <div>
+        {% for result in results %}
+            <div class="module" style="padding:10px">
+                <a style="margin:10px" href="{{ result.1 }}">{{ result.0 }} <span>({{ result.2 }})</span></a>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

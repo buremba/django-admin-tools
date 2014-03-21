@@ -1,0 +1,54 @@
+{% load i18n admin_static %}
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Operative Access"/>
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}"/>
+    <title>Operative Access</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+</head>
+<body>
+<div class="box">
+    <div class="content">
+        <h1>Authentication Required</h1>
+
+        <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+
+            {% if form.errors and not form.non_field_errors and not form.this_is_the_login_form.errors %}
+                <p class="errornote" style="color:#fff">
+                    {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}
+                        {% trans "Please correct the errors below." %}{% endif %}
+                </p>
+            {% endif %}
+
+            {% if form.non_field_errors or form.this_is_the_login_form.errors %}
+                {% for error in form.non_field_errors|add:form.this_is_the_login_form.errors %}
+                    <p class="errornote" style="color:#fff">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+            <br>
+            {% if not form.this_is_the_login_form.errors %}{{ form.username.errors }}{% endif %}
+            {{ form.username }}<br>
+            {% if not form.this_is_the_login_form.errors %}{{ form.password.errors }}{% endif %}
+            {{ form.password }}<br>
+            <input type="hidden" name="this_is_the_login_form" value="1"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <input class="btn" type="submit" value="{% trans 'Log in' %}">
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    document.getElementById('id_username').setAttribute('placeholder', '{{ form.username.label }}')
+    document.getElementById('id_password').setAttribute('placeholder', '{{ form.password.label }}')
+    document.getElementById('id_username').focus()
+</script>
+</div>

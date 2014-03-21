@@ -1,0 +1,33 @@
+{% load i18n admin_tools_menu_tags %}
+{% if menu.children %}
+    <script type="text/javascript" src="{{ media_url }}/admin_tools/js/utils.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Load js files syncronously and conditionally
+        var js_files = [
+            {
+                src: '{{ media_url }}/admin_tools/js/jquery/jquery.min.js',
+                test: function () {
+                    return typeof(jQuery) == 'undefined';
+                }
+            },{% for js in menu.Media.js %},
+                {
+                    src: '{{ media_url }}/{{ js }}',
+                    test: function () {
+                        return true;
+                    }
+                }{% endfor %}
+        ];
+    </script>
+
+    <div class="nav">
+      <div class="search">
+          <form action="{% url 'admin_tools_quick_search' %}">
+        <div><input placeholder="Search" type="search" value="{{ request.GET.qs }}" name="qs"></div>
+              </form>
+      </div>
+    {% for item in menu.children %}
+        {% admin_tools_render_menu_item item forloop.counter %}
+    {% endfor %}
+</div>
+{% endif %}
