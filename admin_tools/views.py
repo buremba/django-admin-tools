@@ -48,7 +48,7 @@ def search(request):
             for field_name in model_admin.search_fields:
                 try:
                     field = meta.get_field(field_name)
-                    if hasattr(field, 'foreign_related_fields') and len(field.foreign_related_fields) == 0):
+                    if hasattr(field, 'foreign_related_fields') and len(field.foreign_related_fields) == 0:
                         continue
                 except FieldDoesNotExist, e:
                     pass
