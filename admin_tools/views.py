@@ -44,6 +44,16 @@ def search(request):
     if q is not None:
         for model, model_admin in admin.site._registry.items():
             meta = model._meta
+            fields = []
+            for field_name in model_admin.search_fields:
+                try:
+                    field = meta.get_field(field_name)
+                    if hasattr(field, 'foreign_related_fields') and len(field.foreign_related_fields) == 0):
+                        continue
+                except FieldDoesNotExist, e:
+                    pass
+                fields.append(field_name)
+                
             search_fields = [field for field in model_admin.search_fields if not hasattr(meta._name_map, field) or (not hasattr(meta.get_field(field), 'foreign_related_fields') or len(meta.get_field(field).foreign_related_fields) == 0)]
             if len(search_fields):
                 results = get_search_results(search_fields, model.objects.all(), q).count()
