@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models.fields import FieldDoesNotExist
 import operator
 from django.shortcuts import render_to_response
 from django.template import RequestContext
